@@ -1,36 +1,21 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
 
-class AdTech_GTM_AdUnit extends Component {
+type Props = {
+  name: string,
+  size: string
+};
+
+class AdTech_GTM_AdUnit extends React.Component<Props> {
   render() {
     return (
       <div>
         <div
-          className={
-            "ADOPS_GTM_AdUnit " +
-            this.props.os +
-            "_" +
-            this.props.screen +
-            " " +
-            this.props.name
-          }
-          id={
-            "ADOPS_GTM_AdUnit_" +
-            this.props.os +
-            "_" +
-            this.props.screen +
-            "_" +
-            this.props.name
-          }
+          className={"ADTECH_GTM_AdUnit " + this.props.name}
+          allowedsizes={this.props.size}
         />
       </div>
     );
   }
 }
 
-AdTech_GTM_AdUnit.propTypes = {
-  screen: PropTypes.string,
-  os: PropTypes.string,
-  name: PropTypes.string
-};
 export default AdTech_GTM_AdUnit;
